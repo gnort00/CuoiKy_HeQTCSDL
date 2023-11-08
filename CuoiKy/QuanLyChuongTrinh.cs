@@ -19,10 +19,10 @@ namespace CuoiKy
         }
         private SqlCommand command;
         SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=DBMS_SV5T_K;User ID=sa;Password=ldtrong0");
-        private void KetNoiCSDL()
+        string sql = "Select MaCT,TenCT,LoaiCT,TrangThai From CHUONGTRINH";
+        private void KetNoiCSDL(String sql)
         {
             conn.Open();
-            string sql = "Select MaCT,TenCT,TrangThai From CHUONGTRINH";
             SqlCommand com = new SqlCommand(sql, conn);
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -34,7 +34,19 @@ namespace CuoiKy
 
         private void QuanLyChuongTrinh_Load(object sender, EventArgs e)
         {
-            KetNoiCSDL();
+            KetNoiCSDL("Select MaCT,TenCT,LoaiCT,TrangThai From CHUONGTRINH");
+        }
+
+        private void btn_HienThi_Click(object sender, EventArgs e)
+        {
+            KetNoiCSDL("Select MaCT,TenCT,LoaiCT,TrangThai From CHUONGTRINH");
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            String find= txt_Nhap.Text.Trim();
+            String sql= "Select MaCT,TenCT,LoaiCT,TrangThai From CHUONGTRINH where CHUONGTRINH.LoaiCT LIKE '" + find+"'";
+            KetNoiCSDL(sql);
         }
     }
 }

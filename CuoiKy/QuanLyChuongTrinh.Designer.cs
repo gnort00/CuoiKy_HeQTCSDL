@@ -33,11 +33,16 @@ namespace CuoiKy
             this.label1 = new System.Windows.Forms.Label();
             this.btn_taoCT = new System.Windows.Forms.Button();
             this.dg_QLCT = new System.Windows.Forms.DataGridView();
+            this.btn_HienThi = new System.Windows.Forms.Button();
             this.MaCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSSVTG = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.LoaiCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemDanh = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_Nhap = new System.Windows.Forms.TextBox();
+            this.btn_TimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_QLCT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +50,7 @@ namespace CuoiKy
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 72);
+            this.label1.Location = new System.Drawing.Point(187, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 29);
             this.label1.TabIndex = 1;
@@ -57,7 +62,7 @@ namespace CuoiKy
             this.btn_taoCT.Name = "btn_taoCT";
             this.btn_taoCT.Size = new System.Drawing.Size(154, 48);
             this.btn_taoCT.TabIndex = 2;
-            this.btn_taoCT.Text = "Tạo CT mới";
+            this.btn_taoCT.Text = "Chỉnh sửa";
             this.btn_taoCT.UseVisualStyleBackColor = true;
             // 
             // dg_QLCT
@@ -67,6 +72,7 @@ namespace CuoiKy
             this.MaCT,
             this.TenCT,
             this.DSSVTG,
+            this.LoaiCT,
             this.TrangThai,
             this.DiemDanh});
             this.dg_QLCT.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -76,6 +82,16 @@ namespace CuoiKy
             this.dg_QLCT.RowTemplate.Height = 24;
             this.dg_QLCT.Size = new System.Drawing.Size(667, 271);
             this.dg_QLCT.TabIndex = 48;
+            // 
+            // btn_HienThi
+            // 
+            this.btn_HienThi.Location = new System.Drawing.Point(34, 125);
+            this.btn_HienThi.Name = "btn_HienThi";
+            this.btn_HienThi.Size = new System.Drawing.Size(106, 48);
+            this.btn_HienThi.TabIndex = 49;
+            this.btn_HienThi.Text = "Hiển thị tất cả";
+            this.btn_HienThi.UseVisualStyleBackColor = true;
+            this.btn_HienThi.Click += new System.EventHandler(this.btn_HienThi_Click);
             // 
             // MaCT
             // 
@@ -108,6 +124,14 @@ namespace CuoiKy
             this.DSSVTG.UseColumnTextForButtonValue = true;
             this.DSSVTG.Width = 120;
             // 
+            // LoaiCT
+            // 
+            this.LoaiCT.DataPropertyName = "LoaiCT";
+            this.LoaiCT.HeaderText = "LoaiCT";
+            this.LoaiCT.MinimumWidth = 6;
+            this.LoaiCT.Name = "LoaiCT";
+            this.LoaiCT.Width = 125;
+            // 
             // TrangThai
             // 
             this.TrangThai.DataPropertyName = "TrangThai";
@@ -123,11 +147,41 @@ namespace CuoiKy
             this.DiemDanh.Name = "DiemDanh";
             this.DiemDanh.Width = 125;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(127, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Nhập loại CT";
+            // 
+            // txt_Nhap
+            // 
+            this.txt_Nhap.Location = new System.Drawing.Point(244, 72);
+            this.txt_Nhap.Name = "txt_Nhap";
+            this.txt_Nhap.Size = new System.Drawing.Size(139, 22);
+            this.txt_Nhap.TabIndex = 51;
+            // 
+            // btn_TimKiem
+            // 
+            this.btn_TimKiem.Location = new System.Drawing.Point(408, 72);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btn_TimKiem.TabIndex = 52;
+            this.btn_TimKiem.Text = "Tìm kiếm";
+            this.btn_TimKiem.UseVisualStyleBackColor = true;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
+            // 
             // QuanLyChuongTrinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 450);
+            this.Controls.Add(this.btn_TimKiem);
+            this.Controls.Add(this.txt_Nhap);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_HienThi);
             this.Controls.Add(this.dg_QLCT);
             this.Controls.Add(this.btn_taoCT);
             this.Controls.Add(this.label1);
@@ -147,8 +201,13 @@ namespace CuoiKy
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenCT;
         private System.Windows.Forms.DataGridViewButtonColumn DSSVTG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private System.Windows.Forms.DataGridViewButtonColumn DiemDanh;
+        private System.Windows.Forms.Button btn_HienThi;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_Nhap;
+        private System.Windows.Forms.Button btn_TimKiem;
     }
 }
 

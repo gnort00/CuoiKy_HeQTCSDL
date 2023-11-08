@@ -29,37 +29,37 @@ namespace CuoiKy
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dg_DS = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_DS)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dg_DS
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dg_DS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_DS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.TenSV,
+            this.HoTen,
             this.MaSV,
             this.TrangThai});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 326);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dg_DS.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dg_DS.Location = new System.Drawing.Point(0, 124);
+            this.dg_DS.Name = "dg_DS";
+            this.dg_DS.RowHeadersWidth = 51;
+            this.dg_DS.RowTemplate.Height = 24;
+            this.dg_DS.Size = new System.Drawing.Size(616, 326);
+            this.dg_DS.TabIndex = 0;
+            this.dg_DS.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dg_DS_CellFormatting);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(152, 32);
+            this.label1.Location = new System.Drawing.Point(90, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(396, 25);
             this.label1.TabIndex = 1;
@@ -72,15 +72,17 @@ namespace CuoiKy
             this.STT.Name = "STT";
             this.STT.Width = 125;
             // 
-            // TenSV
+            // HoTen
             // 
-            this.TenSV.HeaderText = "Tên Sinh Viên";
-            this.TenSV.MinimumWidth = 6;
-            this.TenSV.Name = "TenSV";
-            this.TenSV.Width = 125;
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên Sinh Viên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 125;
             // 
             // MaSV
             // 
+            this.MaSV.DataPropertyName = "MaSV";
             this.MaSV.HeaderText = "Mã Sinh Viên";
             this.MaSV.MinimumWidth = 6;
             this.MaSV.Name = "MaSV";
@@ -88,6 +90,7 @@ namespace CuoiKy
             // 
             // TrangThai
             // 
+            this.TrangThai.DataPropertyName = "TrangThai";
             this.TrangThai.HeaderText = "Trạng Thái";
             this.TrangThai.MinimumWidth = 6;
             this.TrangThai.Name = "TrangThai";
@@ -99,10 +102,11 @@ namespace CuoiKy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dg_DS);
             this.Name = "DSSVTG";
             this.Text = "DSSVTG";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.DSSVTG_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_DS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,11 +114,11 @@ namespace CuoiKy
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dg_DS;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-        private System.Windows.Forms.Label label1;
     }
 }
