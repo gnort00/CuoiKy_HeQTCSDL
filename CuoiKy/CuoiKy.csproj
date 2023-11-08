@@ -66,6 +66,7 @@
     <Compile Include="TaoCT.Designer.cs">
       <DependentUpon>TaoCT.cs</DependentUpon>
     </Compile>
+    <Compile Include="thaytaokhoong.cs" />
     <EmbeddedResource Include="DSSVTG.resx">
       <DependentUpon>DSSVTG.cs</DependentUpon>
     </EmbeddedResource>
